@@ -1,0 +1,22 @@
+.answerBox {
+    background-color: white; /* Card background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    padding: 20px; /* Spacing inside the card */
+    margin: 20px; /* Spacing outside the card */
+    width: 80%;
+    text-align: center; /* Aligns text to the center */
+    font-family: 'Arial', sans-serif; /* Font styling, can be changed */
+}
+
+.card-title {
+    font-size: 24px; /* Size of the title text */
+    color: #333; /* Color of the title text */
+    margin-bottom: 10px; /* Spacing below the title */
+}
+
+.card-text {
+    font-size: 16px; /* Size of the body text */
+    color: #666; /* Color of the body text */
+    line-height: 1.5; /* Spacing between lines of text */
+}

@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import HeroSection from "./assets/components/heroSection.jsx";
 import PromptTextBox from "./assets/components/promptTextBox.jsx";
+import FurtherQTextBox from "./assets/components/furtherQTextBox.jsx";
+import FurtherAnswerTextBox from "./assets/components/furtherAnswerBox.jsx";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +19,8 @@ function App() {
       <div className= "landing">
           <HeroSection/>
           <PromptTextBox placeholder= "Enter youtube link here" onTextChange={handleTextChange}/>
+          <FurtherQTextBox placeholder= "Follow-up questions?"/>
+          <FurtherAnswerTextBox/>
       </div>
     </>
   )
