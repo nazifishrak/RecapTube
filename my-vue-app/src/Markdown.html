@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Put title Here </title>
+    <script src="https://cdn.jsdelivr.net/npm/marked@2.0.0/marked.min.js"></script>
+</head>
+<body>
+
+<h1>Put something else here</h1>
+
+<div id="chatGPTResults"></div>
+
+<script>
+    // Assume 'chatGPTResponse' is the variable containing ChatGPT results in Markdown format
+    var chatGPTResponse = "Your **ChatGPT** results in Markdown format.\n\n- Bullet point 1\n- Bullet point 2";
+    var chatGPTResultsDiv = document.getElementById("chatGPTResults");
+
+    // Convert Markdown to HTML using Marked.js
+    chatGPTResultsDiv.innerHTML = marked(chatGPTResponse);
+</script>
+
+</body>
+</html>
