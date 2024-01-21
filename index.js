@@ -2,6 +2,7 @@
 import express from "express";
 import pkg from 'youtube-transcript';
 import 'dotenv/config';
+import cors from "cors";
 const { YoutubeTranscript } = pkg;
 
 const app = express();
@@ -10,6 +11,7 @@ const port = 3000;
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(cors());
 
 const GPTKEY = process.env.apiKey
 function getYoutubeTranscript(url) {
