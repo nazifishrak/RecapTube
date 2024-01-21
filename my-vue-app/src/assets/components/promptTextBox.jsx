@@ -47,8 +47,9 @@ const PromptTextBox = ({ placeholder, onTextChange }) => {
                 value={link}
                 onChange={handleChange}
                 className="text-box"
+                style = {{width:"65%" ,height: "30px", display:"block" , margin: "0 auto", textAlign: "center" ,fontSize:"20px"}}
             />
-            <button onClick={handleClick} disabled={isLoading}>Find notes</button>
+            <button onClick={handleClick} disabled={isLoading} style={{margin:"10 px"}}>Find notes</button>
 
             {/* Display spinner when loading */}
             {isLoading && <BeatLoader size={15} color={"#123abc"} />}
