@@ -45,7 +45,7 @@
 }
 
 .cards-container {
-    display: flex;
+    display: flex ;
     justify-content: center; /* Centers the cards horizontally */
     align-items: flex-start; /* Aligns the cards to the top */
     gap: 1rem; /* Adds space between the cards */
