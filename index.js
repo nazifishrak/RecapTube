@@ -21,9 +21,9 @@ const GPT4TurboModel = "gpt-4-1106-preview";
 const GPT3 = "gpt-3.5-turbo-1106";
 
 let context = [];
-const prompts = ["Create a note that is like a tutorial",
+const prompts = ["Create a note that is like a tutorial and give it a relevant title",
   "based on this youtube transcript and return your note in markdown format",
-  "answer only this question in brief based on the chat context we had converesed which I am giving here return your answer in markdown format - "];
+  "answer (return in markdown) only this question in brief based on the chat context I am giving you return your answer in markdown format Here is the context - "];
 const GPTKEY = process.env.OPENAI_API_KEY; // Ensure the environment variable name is correct
 const openai = new OpenAI({ apiKey: GPTKEY });
 
@@ -96,6 +96,7 @@ app.post("/ask", async (req, res) => {
 
 // Root route to render the initial form
 app.get("/", (req, res) => {
+  context = [];
   res.sendFile(path.resolve(__dirname, "my-vue-app/dist/index.html"));
 });
 

@@ -74,6 +74,7 @@ button:hover {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Equivalent to shadow-md in Tailwind */
     padding: 2rem; /* Equivalent to p-8 in Tailwind */
     margin: 2rem 1rem;
+    color: black;
 
 
 }

@@ -40,7 +40,8 @@ body {
 
 html {
   height: 100%; /* Ensure html takes at least the full viewport height */
-  background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e, #ff9a9e) repeat;
+  /* background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e, #ff9a9e) repeat; */
+  background: linear-gradient(270deg, #168eff, #3527d2, #91eafa, #ff9a9e, #ff9a9e) repeat;
   background-size: 400% 400%;
   animation: gradientFlow 15s ease infinite;
 }

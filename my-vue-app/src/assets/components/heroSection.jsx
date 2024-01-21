@@ -3,7 +3,8 @@ import "./heroSection.css"
 const HeroSection = () => {
     return (
         <div className="hero-container">
-            <h1>Youtube Assistant</h1>
+            <h1>RecapTube</h1>
+            <p>Unwind the Content, Rewind the Knowledge</p>
         </div>
     );
 };
