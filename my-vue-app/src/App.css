@@ -32,16 +32,22 @@ body {
   align-content: center;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y:auto;
   height: 100vh;
   animation: gradientFlow 15s ease infinite;
-  background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e, #ff9a9e);
   background-size: 400% 400%;
+  background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e, #ff9a9e) repeat;
 }
 .landing {
-  width: 100vw; /* Sets the width to 100% of the viewport width */
-  margin: 0;
-  padding: 0;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: auto; /* Sets the width to 100% of the viewport width */
+  height: 100%;
+  margin: 10px;
   box-sizing: border-box; /* Includes padding and border in the element's total width and height */
 }
 @keyframes gradientFlow {

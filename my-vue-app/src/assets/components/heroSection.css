@@ -1,0 +1,10 @@
+.hero-container {
+    margin-top: 1cm; /* Ensure there's no negative margin */
+    padding-top: 20px; /* Add some padding at the top, adjust as needed */
+    height: auto; /* Keeps the height flexible to content size */
+    overflow: visible; /* Ensures content isn't hidden */
+    position: relative; /* Keeps relative positioning */
+    /* Additional properties for safety */
+    display: block; /* Ensures the container is a block-level element */
+    box-sizing: border-box; /* Makes sure padding doesn't affect overall width */
+}
