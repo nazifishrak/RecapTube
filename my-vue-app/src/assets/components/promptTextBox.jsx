@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import responseSection from "./responseSection.jsx";
 import ResponseSection from "./responseSection.jsx";
+import FurtherAnswerTextBox from "./furtherAnswerBox.jsx";
 
 const PromptTextBox = ({ placeholder, onTextChange }) => {
     const [link, setLink] = useState('');
@@ -14,13 +15,14 @@ const PromptTextBox = ({ placeholder, onTextChange }) => {
     };
 
     const handleClick = async () => {
+        console.log("BUTTON CLICKED");
         try {
             const response = await fetch('http://localhost:3000/generate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ link}) // Send the text state in the request body
+                body: JSON.stringify({link}) // Send the text state in the request body
             });
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -45,7 +47,7 @@ const PromptTextBox = ({ placeholder, onTextChange }) => {
             />
             <button onClick={handleClick}> Find notes</button>
 
-            <ResponseSection keypoints= {response?response.url: ''} notes = {response?response.transcript:''}> </ResponseSection>
+            <ResponseSection keypoints= {response?response.notes: ''} notes = {response?response.notes:''}> </ResponseSection>
 
 
 

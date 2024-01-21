@@ -23,7 +23,7 @@ const FurtherQTextBox = ({ placeholder, onTextChange }) => {
                 className="text-box" // You can set your class for styling
             />
             <button> Find answers</button>
-            <FurtherAnswerTextBox> </FurtherAnswerTextBox>
+
         </div>
 
     );

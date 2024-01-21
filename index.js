@@ -25,7 +25,8 @@ async function getTutorialNotes(transcript) {
         const response = await axios.post(
             'https://api.openai.com/v1/chat/completions',
             {
-                model: "gpt-4-1106-preview",
+                // model: "gpt-4-1106-preview",
+                model: "gpt-3.5-turbo-1106",
                 messages: [{
                     "role": "user",
                     "content": `Create a tutorial note based on this youtube transcript and return your note in markdown format: ${transcript}`
