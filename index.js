@@ -21,31 +21,33 @@ const GPT4TurboModel = "gpt-4-1106-preview";
 const GPT3 = "gpt-3.5-turbo-1106";
 
 let context = [];
-const prompts = ["Create a tutorial note"];
+const prompts = ["Create a note that is like a tutorial",
+  "based on this youtube transcript and return your note in markdown format",
+  "answer only this question in brief based on the chat context we had converesed which I am giving here return your answer in markdown format - "];
 const GPTKEY = process.env.OPENAI_API_KEY; // Ensure the environment variable name is correct
 const openai = new OpenAI({ apiKey: GPTKEY });
 
-async function getTutorialNotes(prompt, transcript) {
+async function getTutorialNotes(prompt, contextDefiner, transcript) {
   try {
     const response = await axios.post(
-      "https://api.openai.com/v1/chat/completions",
-      {
-        // model: "gpt-4-1106-preview",
-        model: GPT3,
-        messages: [
-          {
-            role: "user",
-            content: `${prompt} based on this youtube transcript and return your note in markdown format: ${transcript}`,
-          },
-        ],
-        temperature: 0.7,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${GPTKEY}`,
+        "https://api.openai.com/v1/chat/completions",
+        {
+
+          model: GPT3,
+          messages: [
+            {
+              role: "user",
+              content: `${prompt} ${contextDefiner}: ${transcript}`,
+            },
+          ],
+          temperature: 0.7,
         },
-      }
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${GPTKEY}`,
+          },
+        }
     );
     return response.data;
   } catch (error) {
@@ -68,7 +70,7 @@ app.post("/generate", async (req, res) => {
   let url = req.body.link; // Get the YouTube URL from the form
   try {
     let transcript = await getYoutubeTranscript(url);
-    let resData = await getTutorialNotes(prompts[0], transcript);
+    let resData = await getTutorialNotes(prompts[0], prompts[1], transcript);
     let tutNotes = resData.choices[0].message.content;
     context.push(tutNotes);
     res.json({ notes: tutNotes, obj: resData });
@@ -78,11 +80,11 @@ app.post("/generate", async (req, res) => {
 });
 
 app.post("/ask", async (req, res) => {
-  let quest = req.body.question; // Get the YouTube URL from the form
+  let quest = req.body.prompt; // Get the YouTube URL from the form
   try {
     console.log(context.toString());
 
-    let resData = await getTutorialNotes(quest, context.join(" "));
+    let resData = await getTutorialNotes(quest, prompts[2], context.join(" "));
 
     let gptRespOnQuestion = resData.choices[0].message.content;
     context.push(gptRespOnQuestion);
@@ -96,6 +98,12 @@ app.post("/ask", async (req, res) => {
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "my-vue-app/dist/index.html"));
 });
+
+app.post("/refresh", (req, res)=>{
+  context = [];
+  res.status(200).json({ message: 'Refreshed successfully'});
+
+})
 
 // Start the server
 app.listen(port, () => {

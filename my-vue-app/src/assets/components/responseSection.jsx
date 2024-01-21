@@ -1,5 +1,6 @@
 import './ResponseSection.css'
 import ReactMarkdown from 'react-markdown';
+import FurtherQues from "./FurtherQues.jsx";
 const ResponseSection = ({keypoints, notes}) => {
 
     return(
@@ -11,6 +12,7 @@ const ResponseSection = ({keypoints, notes}) => {
                     <ReactMarkdown children = {keypoints}/>
                 </p>
             </div>
+            <FurtherQues/>
         </div>
     )
 }

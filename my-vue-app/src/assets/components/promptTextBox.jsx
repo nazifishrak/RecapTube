@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import responseSection from "./responseSection.jsx";
 import ResponseSection from "./responseSection.jsx";
-import FurtherAnswerTextBox from "./furtherAnswerBox.jsx";
 import {BeatLoader} from "react-spinners";
 
 const PromptTextBox = ({ placeholder, onTextChange }) => {
@@ -17,7 +15,7 @@ const PromptTextBox = ({ placeholder, onTextChange }) => {
     };
 
     const handleClick = async () => {
-        console.log("BUTTON CLICKED");
+
         setIsLoading(true); // Start loading
         try {
             const response = await fetch('http://localhost:3000/generate', {
