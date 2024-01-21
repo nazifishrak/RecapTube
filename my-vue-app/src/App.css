@@ -40,7 +40,7 @@ body {
   background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e, #ff9a9e) repeat;
 }
 .landing {
-  overflow: scroll;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   align-items: center;

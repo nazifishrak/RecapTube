@@ -1,6 +1,6 @@
 #card1 {
     display: block;
-    width: 50rem; /* Fixed width */
+    width: 80rem; /* Fixed width */
     min-height: 200px; /* Minimum height, allows card to grow vertically */
 
     background-color: white; /* Equivalent to bg-white in Tailwind */
@@ -12,23 +12,6 @@
     overflow-y: auto;
 
 }
-#card2 {
-    display: block;
-    width: 18rem; /* Fixed width */
-    min-height: 200px; /* Minimum height, allows card to grow vertically */
-    overflow-y: auto;
-    background-color: white; /* Equivalent to bg-white in Tailwind */
-    border: 1px solid #d1d5db; /* Equivalent to border border-gray-300 in Tailwind */
-    border-radius: 0.5rem; /* Equivalent to rounded-lg in Tailwind */
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Equivalent to shadow-md in Tailwind */
-    padding: 2rem; /* Equivalent to p-8 in Tailwind */
-    margin-top: 2rem; /* Equivalent to my-8 in Tailwind */
-    margin-bottom: 2rem; /* Equivalent to my-8 in Tailwind */
-    margin-left: 1rem; /* Equivalent to mx-4 in Tailwind */
-    margin-right: 1rem; /* Equivalent to mx-4 in Tailwind */
-
-}
-
 
 #card1 p, #card2 p {
     margin-bottom: 1rem; /* Equivalent to mb-4 in Tailwind */
@@ -45,7 +28,7 @@
 }
 
 .cards-container {
-    display: flex;
+    display: flex ;
     justify-content: center; /* Centers the cards horizontally */
     align-items: flex-start; /* Aligns the cards to the top */
     gap: 1rem; /* Adds space between the cards */
