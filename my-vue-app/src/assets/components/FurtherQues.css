@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    width: 400px;
+}
+
+h1 {
+    text-align: center;
+}
+
+input[type="text"] {
+    width: calc(100% - 80px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 60px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+}
+
+.user {
+    text-align: right;
+}
+
+.bot {
+    text-align: left;
+}
+
+.user .message {
+    background-color: #d1e7ff;
+}
+
+#card1 {
+    display: block;
+    width: 80rem; /* Fixed width */
+    min-height: 200px; /* Minimum height, allows card to grow vertically */
+
+    background-color: white; /* Equivalent to bg-white in Tailwind */
+    border: 1px solid #d1d5db; /* Equivalent to border border-gray-300 in Tailwind */
+    border-radius: 0.5rem; /* Equivalent to rounded-lg in Tailwind */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Equivalent to shadow-md in Tailwind */
+    padding: 2rem; /* Equivalent to p-8 in Tailwind */
+    margin: 2rem 1rem;
+
+
+}
+
+
+#card1 p, #card2 p {
+    margin-bottom: 1rem; /* Equivalent to mb-4 in Tailwind */
+}
+
+#card1 p.text-xl, #card2 p.text-xl {
+    font-size: 1.25rem; /* Equivalent to text-xl in Tailwind */
+    font-weight: bold; /* Equivalent to font-bold in Tailwind */
+    color: #1f2937; /* Equivalent to text-gray-800 in Tailwind */
+}
+
+#card1 p.text-gray-700, #card2 p.text-gray-700 {
+    color: #4b5563; /* Equivalent to text-gray-700 in Tailwind */
+}

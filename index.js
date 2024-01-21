@@ -22,32 +22,32 @@ const GPT3 = "gpt-3.5-turbo-1106";
 
 let context = [];
 const prompts = ["Create a note that is like a tutorial",
- "based on this youtube transcript and return your note in markdown format",
-"answer only this question in brief based on the chat context we had converesed which I am giving here return your answer in markdown format - "];
+  "based on this youtube transcript and return your note in markdown format",
+  "answer only this question in brief based on the chat context we had converesed which I am giving here return your answer in markdown format - "];
 const GPTKEY = process.env.OPENAI_API_KEY; // Ensure the environment variable name is correct
 const openai = new OpenAI({ apiKey: GPTKEY });
 
 async function getTutorialNotes(prompt, contextDefiner, transcript) {
   try {
     const response = await axios.post(
-      "https://api.openai.com/v1/chat/completions",
-      {
-        
-        model: GPT3,
-        messages: [
-          {
-            role: "user",
-            content: `${prompt} ${contextDefiner}: ${transcript}`,
-          },
-        ],
-        temperature: 0.7,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${GPTKEY}`,
+        "https://api.openai.com/v1/chat/completions",
+        {
+
+          model: GPT3,
+          messages: [
+            {
+              role: "user",
+              content: `${prompt} ${contextDefiner}: ${transcript}`,
+            },
+          ],
+          temperature: 0.7,
         },
-      }
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${GPTKEY}`,
+          },
+        }
     );
     return response.data;
   } catch (error) {
@@ -100,8 +100,8 @@ app.get("/", (req, res) => {
 });
 
 app.post("/refresh", (req, res)=>{
-    context = [];
-    res.status(200).json({ message: 'Refreshed successfully'});
+  context = [];
+  res.status(200).json({ message: 'Refreshed successfully'});
 
 })
 

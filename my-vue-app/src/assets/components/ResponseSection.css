@@ -9,9 +9,10 @@
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Equivalent to shadow-md in Tailwind */
     padding: 2rem; /* Equivalent to p-8 in Tailwind */
     margin: 2rem 1rem;
-    overflow-y: auto;
+
 
 }
+
 
 #card1 p, #card2 p {
     margin-bottom: 1rem; /* Equivalent to mb-4 in Tailwind */
@@ -28,7 +29,7 @@
 }
 
 .cards-container {
-    display: flex ;
+    display: block ;
     justify-content: center; /* Centers the cards horizontally */
     align-items: flex-start; /* Aligns the cards to the top */
     gap: 1rem; /* Adds space between the cards */
