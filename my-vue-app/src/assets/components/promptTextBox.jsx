@@ -36,14 +36,14 @@ const PromptTextBox = ({ placeholder, onTextChange }) => {
     };
 
     return (
-        <div>
+        <div className= "prompt-box">
 
             <input
                 type="text"
                 placeholder={placeholder}
                 value={link}
                 onChange={handleChange}
-                className="text-box" // You can set your class for styling
+                className="text-box"
             />
             <button onClick={handleClick}> Find notes</button>
 

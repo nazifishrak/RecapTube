@@ -7,4 +7,5 @@
     /* Additional properties for safety */
     display: block; /* Ensures the container is a block-level element */
     box-sizing: border-box; /* Makes sure padding doesn't affect overall width */
+    font-size: xx-large;
 }
