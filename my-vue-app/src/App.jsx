@@ -20,7 +20,6 @@ function App() {
           <HeroSection/>
           <PromptTextBox placeholder= "Enter youtube link here" onTextChange={handleTextChange}/>
           <FurtherQTextBox placeholder= "Follow-up questions?"/>
-          <FurtherAnswerTextBox/>
       </div>
     </>
   )

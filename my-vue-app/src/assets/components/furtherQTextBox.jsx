@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import FurtherAnswerTextBox from "./furtherAnswerBox.jsx";
+import "./furtherQTextBox.css";
 
 const FurtherQTextBox = ({ placeholder, onTextChange }) => {
     const [text, setText] = useState('');
@@ -11,7 +13,7 @@ const FurtherQTextBox = ({ placeholder, onTextChange }) => {
     };
 
     return (
-        <div>
+        <div className= "followUp">
 
             <input
                 type="text"
@@ -21,6 +23,7 @@ const FurtherQTextBox = ({ placeholder, onTextChange }) => {
                 className="text-box" // You can set your class for styling
             />
             <button> Find answers</button>
+            <FurtherAnswerTextBox> </FurtherAnswerTextBox>
         </div>
 
     );

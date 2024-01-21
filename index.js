@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import OpenAI from "openai";
 import axios from 'axios'; // Make sure to import axios
 
+import cors from "cors";
 const { YoutubeTranscript } = pkg;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -14,6 +15,7 @@ const port = process.env.PORT || 3000; // Use the port from the environment vari
 app.use(express.static(path.resolve(__dirname, 'my-vue-app/dist')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 const GPTKEY = process.env.OPENAI_API_KEY; // Ensure the environment variable name is correct
 const openai = new OpenAI({ apiKey: GPTKEY });
